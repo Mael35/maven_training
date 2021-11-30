@@ -30,6 +30,13 @@ class SampleTest {
     }
 
     @Test
+    void factExceptionByNegative() {
+        int n = -3;
+        Assertions.assertThatExceptionOfType(IllegalArgumentException.class)
+            .isThrownBy(() -> sample.fact(n));
+    }
+
+    @Test
     void fact() {
         int n = 3;
         int factor = sample.fact(n);
